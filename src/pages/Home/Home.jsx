@@ -7,7 +7,6 @@ import Events from "./Events.jsx";
 import Enquiry from "./Enquiry.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Gallery from "../Gallery/Gallery.jsx";
-
 export default function Home() {
   const features = [
     {

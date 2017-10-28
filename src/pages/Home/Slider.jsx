@@ -35,8 +35,7 @@ export default function FadeSlider() {
           </div>
         ))}
       </Slider>
-
-      <div className="container text-center fade-heroText">
+      <div className="container text-center fade-heroText ">
         <h4 className="fw-bolder">
           Best online education service In the world
         </h4>

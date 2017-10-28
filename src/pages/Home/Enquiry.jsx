@@ -29,10 +29,12 @@ export default function Enquiry() {
             <div className="card enquiry-card border-0 shadow-lg h-100">
               <div className="position-relative">
                 <img
-                  src="https://images.unsplash.com/photo-1584697964198-05cbd7ddc2e2?auto=format&fit=crop&w=900&q=60"
+                  src="https://source.unsplash.com/900x600/?students,learning,school"
                   className="card-img-top"
                   alt="Enquiry"
+                  style={{ borderRadius: "10px", objectFit: "cover", height: "250px" }}
                 />
+
                 <div className="overlay"></div>
                 <h4 className="overlay-title text-white fw-bold">
                   Let’s Connect

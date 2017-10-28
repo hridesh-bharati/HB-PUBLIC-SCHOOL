@@ -1,0 +1,131 @@
+:root {
+  --white: #fff;
+  --purple-primary: rgba(132, 0, 255, 1);
+  --border-color: #392e4e;
+  --background-dark: #060010;
+}
+
+/* 🟪 Layout */
+.bento-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #100020, #030009);
+  min-height: 100vh;
+  user-select: none;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+/* ✨ Magic Card */
+.magic-bento-card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: var(--background-dark);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  will-change: transform, box-shadow;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+}
+
+/* Hover active */
+.magic-bento-card.active {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(132, 0, 255, 0.45);
+  border-color: var(--purple-primary);
+}
+
+/* Image animation only for hovered card */
+.magic-bento-card.active .gallery-image {
+  animation: imagePulse 8s ease-in-out infinite;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  opacity: 0.95;
+  transition: transform 0.6s ease, opacity 0.5s ease;
+}
+
+@keyframes imagePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 1;
+  }
+}
+
+/* 🟣 Border glow */
+.magic-bento-card--border-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 5px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.9)) 0%,
+    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.4)) 40%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 💥 Ripple Particle */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(132, 0, 255, 0.5);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 🏷 Caption */
+.magic-bento-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 6px 0;
+  background: rgba(0, 0, 0, 0.45);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease;
+}
+
+.magic-bento-card.active .magic-bento-caption {
+  background: rgba(132, 0, 255, 0.55);
+}
+
+/* 📱 Responsive */
+@media (max-width: 450px) {
+  .magic-bento-card {
+    width: 42vw;
+    height: 42vw;
+  }
+}
