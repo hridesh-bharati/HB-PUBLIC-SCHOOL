@@ -8,12 +8,12 @@ import Teachers from "./pages/Teachers/Teachers.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Header from "./pages/Header/Header.jsx";
-// import SplashCursor from "./SmokeAnimation/SmokeEffect.jsx";
+import SplashCursor from "./SmokeAnimation/SmokeEffect.jsx";
 
 export default function App() {
   return (
     <BrowserRouter>
-      {/* <SplashCursor /> */}
+      <SplashCursor />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
