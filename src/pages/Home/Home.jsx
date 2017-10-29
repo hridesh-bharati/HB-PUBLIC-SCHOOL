@@ -4,7 +4,7 @@ import About from "../About/About.jsx";
 import Counter from "../About/Counter.jsx";
 import Testimonials from "./Testimonial.jsx";
 import Events from "./Events.jsx";
-import Enquiry from "./Enquiry.jsx";
+import Contact from "../Contact/Contact.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Gallery from "../Gallery/Gallery.jsx";
 export default function Home() {
@@ -78,7 +78,7 @@ export default function Home() {
       <Testimonials />
       <Events />
       <Gallery />
-      <Enquiry />
+      <Contact />
       <Footer />
 
       {/* ==== Custom Styles ==== */}
